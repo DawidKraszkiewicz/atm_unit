@@ -16,11 +16,7 @@ int dispense_coins(unsigned long amount,
                    int **usedCoins,
                    int *usedCount)
 {
-    // Wyliczamy 10^scale
-    unsigned long scale_factor = 1UL;
-    for(int i = 0; i < scale; i++) {
-        scale_factor *= 10UL;
-    }
+    unsigned long scale_factor = (unsigned long) pow(10.0, (double) scale);
 
     unsigned long denom5 = 5UL * scale_factor;
     unsigned long denom2 = 2UL * scale_factor;
