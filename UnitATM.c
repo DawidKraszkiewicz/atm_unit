@@ -2,7 +2,7 @@
 #include "UnitATM_tools.h"
 #include "coin_dispenser.h"
 #include "random_tools.h"
-
+#include <math.h>
 /*
   Główny program:
   - Parsuje argumenty (parse_arguments).
