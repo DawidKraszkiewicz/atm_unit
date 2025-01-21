@@ -14,16 +14,16 @@ Program działa tak długo, aż nie zostanie zamknięte standardowe wejście.
 Parametry uruchomienia:
 
 -u <skala>  – liczba całkowita nieujemna, wykładnik potęgi skali;
-  parametr opcjonalny, z wartością domyślną 0,
+  parametr opcjonalny, z wartością domyślną 0,\
 -m <zasoby> – początkowe ilości poszczególnych monet; format wartości jest opisany niżej;
-  parametr obowiązkowy,
+  parametr obowiązkowy,\
 -t <wyniki> – numer deskryptora, na który mają być wypisywane informacje o żetonach;
-  parametr obowiązkowy,
+  parametr obowiązkowy,\
 -s <ziarno> – wartość inicjująca dla generatora liczb losowych (`random()`);
-  parametr opcjonalny, z domyślną wartością równą PID,
+  parametr opcjonalny, z domyślną wartością równą PID,\
 -d <opóźnienie> - liczba rzeczywista dodatnia, określająca odstęp czasu w centysekundach,
-  parametr opcjonalny, z domyślną wartością 1.
-Wartość parametru -m (<zasoby>) jest łańcuchem składającym się z trzech liczb całkowitych, rozdzielanych dwukropkami. Poszczególne liczby opisują początkowe ilości monet o nominałach, odpowiednio "5", "2" oraz "1". Z tego powodu liczby te nie mogą być ujemne.
+  parametr opcjonalny, z domyślną wartością 1.\
+Wartość parametru -m (<zasoby>) jest łańcuchem składającym się z trzech liczb całkowitych, rozdzielanych dwukropkami.\ Poszczególne liczby opisują początkowe ilości monet o nominałach, odpowiednio "5", "2" oraz "1". Z tego powodu liczby te nie mogą być ujemne.
 
 Wartość parametru -t jest deskryptorem, więc musi być liczbą całkowitą. Minimalny warunek, jaki musi ona spełniać, to być większą od zera.
 
