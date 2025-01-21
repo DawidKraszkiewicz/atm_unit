@@ -100,9 +100,7 @@ int parse_arguments(int argc, char *argv[],
                 *delay_cs = tmp;
                 break;
             }
-
-            // Nieznana opcja
-            case '?':
+          
             default:
                 return -1;
         }
