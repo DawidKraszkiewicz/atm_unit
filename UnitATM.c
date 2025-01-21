@@ -110,11 +110,7 @@ int main(int argc, char *argv[])
             // Przetasuj kolejność użytych żetonów
             shuffle_array(usedCoins, usedCount);
 
-            // Obliczamy mnożnik 10^scale
-            unsigned long scale_factor = 1UL;
-            for (int i = 0; i < scale; i++) {
-                scale_factor *= 10UL;
-            }
+            unsigned long scale_factor = (unsigned long) pow(10.0, (double) scale);
 
             // Wypisujemy rodzaj żetonu (nominał * scale_factor) w nowej linii
             for (int i = 0; i < usedCount; i++) {
