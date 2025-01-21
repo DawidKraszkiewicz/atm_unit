@@ -20,9 +20,9 @@ int parse_arguments(int argc, char *argv[],
     *scale = 0;                      
     *seed = (unsigned int)getpid();  
     *delay_cs = 1.0;                 
-
-    int m_parsed = 0;  // czy -m było w ogóle podane
-    int t_parsed = 0;  // czy -t było w ogóle podane
+    // Do sprawdzania czy parametry były podane
+    int m_parsed = 0;  
+    int t_parsed = 0;  
 
     int opt;
     // Format: "u:m:t:s:d:" – dwukropek oznacza opcje wymagające wartości
