@@ -8,9 +8,4 @@
 #include <ctype.h>
 #include <errno.h>
 
-/*
-  Ewentualne dodatkowe stałe lub deklaracje wspólne
-  dla całego programu.
-*/
-
 #endif
