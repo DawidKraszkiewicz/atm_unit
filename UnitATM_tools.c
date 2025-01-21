@@ -122,9 +122,9 @@ int parse_arguments(int argc, char *argv[],
 
 void print_usage(const char *progname)
 {
-    fprintf(stderr, "Usage: %s -m x:y:z -t descriptor [options]\n", progname);
-    fprintf(stderr, "Options:\n");
-    fprintf(stderr, "  -u <scale>  : non-negative integer exponent (default=0)\n");
-    fprintf(stderr, "  -s <seed>   : random seed (non-negative, default=PID)\n");
-    fprintf(stderr, "  -d <delay>  : delay in centiseconds, must be > 0 (default=1.0)\n");
+    fprintf(stdout, "Usage: %s -m x:y:z -t descriptor [options]\n", progname);
+    fprintf(stdout, "Options:\n");
+    fprintf(stdout, "  -u <scale>  : non-negative integer exponent (default=0)\n");
+    fprintf(stdout, "  -s <seed>   : random seed (non-negative, default=PID)\n");
+    fprintf(stdout, "  -d <delay>  : delay in centiseconds, must be > 0 (default=1.0)\n");
 }
