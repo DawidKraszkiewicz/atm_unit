@@ -23,15 +23,13 @@ int parse_arguments(int argc, char *argv[],
     int t_parsed = 0;  
 
     int opt;
-    // Format: "u:m:t:s:d:" – dwukropek oznacza opcje wymagające wartości
+  
     while ((opt = getopt(argc, argv, "u:m:t:s:d:")) != -1) {
         switch (opt) {
             case 'u': {
-                // Skala (non-negative integer)
                 char *endptr = NULL;
                 errno = 0;
                 long tmp = strtol(optarg, &endptr, 10);
-                // Sprawdzamy poprawność konwersji
                 if ((errno != 0) || (endptr == optarg) || (tmp < 0)) {
                     fprintf(stderr, "Error: invalid (non-negative) scale for -u.\n");
                     return -1;
@@ -59,7 +57,6 @@ int parse_arguments(int argc, char *argv[],
             }
 
             case 't': {
-                // Deskryptor (integer > 0)
                 char *endptr = NULL;
                 errno = 0;
                 long tmp = strtol(optarg, &endptr, 10);
@@ -73,7 +70,6 @@ int parse_arguments(int argc, char *argv[],
             }
 
             case 's': {
-                // Ziarno losowania (unsigned int, ale przyjmujemy >= 0)
                 char *endptr = NULL;
                 errno = 0;
                 long tmp = strtol(optarg, &endptr, 10);
@@ -87,7 +83,6 @@ int parse_arguments(int argc, char *argv[],
             }
 
             case 'd': {
-                // Opóźnienie w centysekundach (double > 0)
                 char *endptr = NULL;
                 errno = 0;
                 double tmp = strtod(optarg, &endptr);
