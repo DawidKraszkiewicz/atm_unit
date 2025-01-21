@@ -17,9 +17,9 @@ int parse_arguments(int argc, char *argv[],
                     double *delay_cs)
 {
     // Ustawiamy wartości domyślne
-    *scale = 0;                      // -u (domyślnie 0)
-    *seed = (unsigned int)getpid();  // -s (domyślnie PID)
-    *delay_cs = 1.0;                 // -d (domyślnie 1.0)
+    *scale = 0;                      
+    *seed = (unsigned int)getpid();  
+    *delay_cs = 1.0;                 
 
     int m_parsed = 0;  // czy -m było w ogóle podane
     int t_parsed = 0;  // czy -t było w ogóle podane
