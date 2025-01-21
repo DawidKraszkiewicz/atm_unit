@@ -1,6 +1,6 @@
 #include "UnitATM.h"
 #include "UnitATM_tools.h"
-#include <getopt.h> // biblioteka do getopt()
+#include <getopt.h> 
 
 /*
   Funkcja parse_arguments:
