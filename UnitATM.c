@@ -35,11 +35,9 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Inicjujemy generator liczb pseudolosowych
     srand(seed);
 
-    // Przeliczamy opóźnienie w centysekundach → mikrosekundy
-    // 1 cs = 10_000 µs
+    // Przeliczamy opóźnienie w centysekundach na mikrosekundy
     int delay_us = (int)(delay_cs * 10000.0);
 
     // Otwieramy podany deskryptor jako strumień wyjściowy
@@ -53,7 +51,6 @@ int main(int argc, char *argv[])
     char line[256];
     while (1) {
         if (!fgets(line, sizeof(line), stdin)) {
-            // EOF lub błąd czytania
             break;
         }
 
@@ -63,7 +60,6 @@ int main(int argc, char *argv[])
 
         // Sprawdzamy, czy wiersz jest pusty (tylko białe znaki)
         if (*p == '\0') {
-            // Pusta linia – ignorujemy bez komunikatu
             continue;
         }
 
@@ -73,24 +69,20 @@ int main(int argc, char *argv[])
         long val = strtol(p, &endptr, 10);
 
         if ((errno != 0) || (endptr == p)) {
-            // Nie udało się sparsować
             fprintf(stderr, "Ignored invalid input line: %s", line);
             continue;
         }
         // Sprawdzamy, czy za liczbą nie ma nic poza białymi znakami
         while (isspace((unsigned char)*endptr)) endptr++;
         if (*endptr != '\0' && *endptr != '\n') {
-            // Niejednoznaczny wiersz
             fprintf(stderr, "Ignored invalid input line: %s", line);
             continue;
         }
         if (val < 0) {
-            // Ujemna wartość – ignorujemy z komunikatem
             fprintf(stderr, "Ignored negative value: %ld\n", val);
             continue;
         }
 
-        // Mamy poprawną wartość nieujemną
         unsigned long amount = (unsigned long) val;
 
         // Wywołujemy logikę wydawania żetonów
@@ -100,8 +92,6 @@ int main(int argc, char *argv[])
                                        &supply5, &supply2, &supply1,
                                        scale,
                                        &usedCoins, &usedCount);
-
-        // Resztę wypisujemy na standardowe wyjście
         printf("%d\n", remainder);
         fflush(stdout);
 
@@ -118,7 +108,6 @@ int main(int argc, char *argv[])
                 fprintf(token_output, "%lu\n", coinValue);
                 fflush(token_output);
 
-                // Opóźnienie między kolejnymi żetonami
                 usleep(delay_us);
             }
 
