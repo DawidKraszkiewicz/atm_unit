@@ -116,7 +116,7 @@ int parse_arguments(int argc, char *argv[],
         return -1;
     }
 
-    return 0; // sukces
+    return 0;
 }
 
 
