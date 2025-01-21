@@ -22,7 +22,6 @@ int dispense_coins(unsigned long amount,
     unsigned long denom2 = 2UL * scale_factor;
     unsigned long denom1 = 1UL * scale_factor;
 
-    // Algorytm zachłanny
     unsigned long canUse5 = amount / denom5;
     if (canUse5 > (unsigned long)(*supply5)) {
         canUse5 = *supply5;
