@@ -1,6 +1,6 @@
 #include "UnitATM.h"
 #include "coin_dispenser.h"
-
+#include <math.h>
 /*
   Funkcja dispense_coins:
   - Wykonuje algorytm zachłanny dla nominałów 5,2,1 (z uwzględnieniem 10^scale).
@@ -18,9 +18,9 @@ int dispense_coins(unsigned long amount,
 {
     unsigned long scale_factor = (unsigned long) pow(10.0, (double) scale);
 
-    unsigned long denom5 = 5UL * scale_factor;
-    unsigned long denom2 = 2UL * scale_factor;
-    unsigned long denom1 = 1UL * scale_factor;
+    unsigned long denom5 = 5 * scale_factor;
+    unsigned long denom2 = 2 * scale_factor;
+    unsigned long denom1 = 1 * scale_factor;
 
     unsigned long canUse5 = amount / denom5;
     if (canUse5 > (unsigned long)(*supply5)) {
