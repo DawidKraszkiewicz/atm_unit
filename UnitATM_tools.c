@@ -5,9 +5,7 @@
 /*
   Funkcja parse_arguments:
   - Ustawia wartości domyślne dla parametrów.
-  - Rozpoznaje argumenty wywołania (za pomocą getopt).
-  - Nie używa atoi.
-  - Zwraca 0 przy powodzeniu, -1 w razie błędu.
+  - Rozpoznaje argumenty wywołania.
 */
 int parse_arguments(int argc, char *argv[],
                     int *scale,
